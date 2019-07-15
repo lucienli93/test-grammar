@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="props"/>
+	<classpathentry kind="lib" path="C:/Users/liyizheng/.m2/repository/com/alibaba/fastjson/1.2.47/fastjson-1.2.47.jar" sourcepath="C:/Users/liyizheng/.m2/repository/com/alibaba/fastjson/1.2.47/fastjson-1.2.47-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liyizheng/.m2/repository/commons-beanutils/commons-beanutils-core/1.8.3/commons-beanutils-core-1.8.3.jar"/>
+	<classpathentry kind="lib" path="D:/Java/file/jar_files/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liyizheng/.m2/repository/org/springframework/spring-core/5.0.10.RELEASE/spring-core-5.0.10.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/liyizheng/.m2/repository/org/springframework/spring-core/5.0.10.RELEASE/spring-core-5.0.10.RELEASE-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -5,16 +5,33 @@ public class Deadlock {
     public static void main(String [] args) {
         int [] arr1 = new int [100];
         int [] arr2 = new int [100];
-        for (int i = 0; i < 100; i++) {
-            arr1[i] = i;
-            arr2[i] = i;
-        }
-        ThreadA mt = new ThreadA("arrT", arr1, arr2);
-        ThreadB mt2 = new ThreadB("arrT2", arr1, arr2);
-        Thread a = new Thread(mt);
-        Thread b = new Thread(mt2);
-        a.start();
-        b.start();
+//        for (int i = 0; i < 100; i++) {
+//            arr1[i] = i;
+//            arr2[i] = i;
+//        }
+//        ThreadA mt = new ThreadA("arrT", arr1, arr2);
+//        ThreadB mt2 = new ThreadB("arrT2", arr1, arr2);
+//        Thread a = new Thread(mt);
+//        Thread b = new Thread(mt2);
+//        a.start();
+//        b.start();
+        
+        new Thread(() -> {
+        	synchronized (arr1) {
+        		System.out.println("1: arr1");
+        		synchronized (arr2) {
+        			System.out.println("1: arr2");
+        		}
+        	}
+        }).start();
+        new Thread(() -> {
+        	synchronized (arr2) {
+        		System.out.println("2: arr2");
+        		synchronized (arr1) {
+        			System.out.println("2: arr1");
+        		}
+        	}
+        }).start();
     }
     
     
@@ -73,7 +90,7 @@ class ThreadB implements Runnable {
                 e.printStackTrace();
             }
             synchronized (arr1) {
-                System.out.println(name + "»ñÈ¡arr1");
+                System.out.println(name + "ï¿½ï¿½È¡arr1");
             }
         }
         

@@ -12,7 +12,7 @@ public class MyTask implements Runnable {
     public void run() {
         System.out.println("ÕıÔÚÖ´ĞĞTask: " + taskNum);
         try {
-            Thread.currentThread().sleep(4000);
+            Thread.currentThread().sleep(400);
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }

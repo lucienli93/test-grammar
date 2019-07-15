@@ -15,7 +15,9 @@ public class FairLock implements Runnable {
     public void run() {
         while (count > 0) {
             synchronized (prev) {
+//                System.out.println(name + "haha");
                 synchronized (post) {
+                    System.out.println(name + "handle lock");
                     System.out.println(name + ": " + count);
                     post.notify();
                     count--;

@@ -1,10 +1,10 @@
 package test;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Test {
 	
@@ -224,12 +224,57 @@ public class Test {
 //	    arr = arrFinal;
 //	    arr[0] = arr[1] = 1;
 //	    System.out.println();
-	    List<Long> te = new ArrayList<>();
-	    te.add(1L);
-	    Long a = 1L;
-	    System.out.println(te.indexOf(a));
+//	    List<Long> te = new ArrayList<>();
+//	    te.add(1L);
+//	    Long a = 1L;
+//	    System.out.println(te.indexOf(a));
+		
+		//StringBuilder
+//		StringBuilder sb = new StringBuilder("123456");
+//		sb.deleteCharAt(sb.length() - 2);
+//		System.out.println(sb.toString());
+	    
+	    //Set
+//	    Set<String> strSet = new HashSet<>();
+//	    strSet.add("a");
+//        strSet.add("b");
+//        strSet.add("a");
+//	    System.out.println(strSet.size());
+	    
+	    //AtomicInteger 
+//	    AtomicInteger test = new AtomicInteger();
+//	    System.out.println(test.addAndGet(2));
+//        System.out.println(test.addAndGet(2));
+//        System.out.println(test.accumulateAndGet(3, new IntBinaryOperator() {
+//            @Override
+//            public int applyAsInt(int left, int right) {
+//                return left * right;
+//            }
+//        }));
+	    
+//	    //Input on cmd
+//	    Scanner scanner = new Scanner(System.in);
+//	    int length = 0;
+//	    if (scanner.hasNextInt()) {
+//	        length = scanner.nextInt();
+//	    }
+//	    int [] array = new int[length];
+//	    for (int i = 0; i < length; i++) {
+//	        if (scanner.hasNextInt()) {
+//	            array[i] = scanner.nextInt();
+//	        } 
+//	    }
+//	    scanner.close();
+//	    System.out.println(array);
+	    
+	    //String split
+	    String url = "C:/Users/liyizheng/Desktop/Fryer (Grade 9)/题目/2003/1.png";
+	    String [] urlList = url.split("/");
+        String [] nameList = "1.png".split("\\.");
+	    System.out.println(urlList);
 	}
-	public static <T> List<T> asList(T... a) {
+	@SuppressWarnings("unchecked")
+    public static <T> List<T> asList(T... a) {
         return new MockArrays<>(a);
     }
 	

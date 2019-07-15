@@ -4,20 +4,20 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class ABC_Lock {
-    private static Lock lock = new ReentrantLock();// Í¨¹ýJDK5ÖÐµÄLockËøÀ´±£Ö¤Ïß³ÌµÄ·ÃÎÊµÄ»¥³â
-    private static int state = 0;//Í¨¹ýstateµÄÖµÀ´È·¶¨ÊÇ·ñ´òÓ¡
+    private static Lock lock = new ReentrantLock();// Í¨ï¿½ï¿½JDK5ï¿½Ðµï¿½Lockï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ß³ÌµÄ·ï¿½ï¿½ÊµÄ»ï¿½ï¿½ï¿½
+    private static int state = 0;//Í¨ï¿½ï¿½stateï¿½ï¿½Öµï¿½ï¿½È·ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ó¡
 
     public class ThreadA extends Thread {
         @Override
         public void run() {
                 try {
                     lock.lock();
-                    while (state % 3 == 0) {// ¶àÏß³Ì²¢·¢£¬²»ÄÜÓÃif£¬±ØÐëÓÃÑ­»·²âÊÔµÈ´ýÌõ¼þ£¬±ÜÃâÐé¼Ù»½ÐÑ
+                    while (state % 3 == 0) {// ï¿½ï¿½ï¿½ß³Ì²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ifï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ÔµÈ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù»ï¿½ï¿½ï¿½
                         System.out.print("A");
                         state++;
                     }
                 } finally {
-                    lock.unlock();// unlock()²Ù×÷±ØÐë·ÅÔÚfinally¿éÖÐ
+                    lock.unlock();// unlock()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½finallyï¿½ï¿½ï¿½ï¿½
                 }
         }
     }
@@ -27,12 +27,12 @@ public class ABC_Lock {
         public void run() {
                 try {
                     lock.lock();
-                    while (state % 3 == 1) {// ¶àÏß³Ì²¢·¢£¬²»ÄÜÓÃif£¬±ØÐëÓÃÑ­»·²âÊÔµÈ´ýÌõ¼þ£¬±ÜÃâÐé¼Ù»½ÐÑ
+                    while (state % 3 == 1) {// ï¿½ï¿½ï¿½ß³Ì²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ifï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ÔµÈ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù»ï¿½ï¿½ï¿½
                         System.out.print("B");
                         state++;
                     }
                 } finally {
-                    lock.unlock();// unlock()²Ù×÷±ØÐë·ÅÔÚfinally¿éÖÐ
+                    lock.unlock();// unlock()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½finallyï¿½ï¿½ï¿½ï¿½
                 }
         }
     }
@@ -42,12 +42,12 @@ public class ABC_Lock {
         public void run() {
                 try {
                     lock.lock();
-                    while (state % 3 == 2) {// ¶àÏß³Ì²¢·¢£¬²»ÄÜÓÃif£¬±ØÐëÓÃÑ­»·²âÊÔµÈ´ýÌõ¼þ£¬±ÜÃâÐé¼Ù»½ÐÑ
+                    while (state % 3 == 2) {// ï¿½ï¿½ï¿½ß³Ì²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ifï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ÔµÈ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù»ï¿½ï¿½ï¿½
                         System.out.print("C");
                         state++;
                     }
                 } finally {
-                    lock.unlock();// unlock()²Ù×÷±ØÐë·ÅÔÚfinally¿éÖÐ
+                    lock.unlock();// unlock()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½finallyï¿½ï¿½ï¿½ï¿½
                 }
         }
     }

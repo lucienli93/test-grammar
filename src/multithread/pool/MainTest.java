@@ -6,13 +6,13 @@ import java.util.concurrent.TimeUnit;
 
 public class MainTest {
     public static void main(String [] args) {
-        ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 10, 200, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<Runnable>(5));
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(2, 3, 200, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<Runnable>(2));
         
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 6; i++) {
             MyTask myTask = new MyTask(i);
             executor.execute(myTask);
-            System.out.println("Ïß³Ì³ØÖÐÏß³ÌÊýÄ¿:  " + executor.getPoolSize() + ", ¶ÓÁÐÖÐµÈ´ýÖ´ÐÐµÄÈÎÎñÊýÄ¿:  " + executor.getQueue().size() 
-                    + "ÒÑÖ´ÐÐÍê±ðµÄÈÎÎñµÄÊýÄ¿: " + executor.getCompletedTaskCount());
+            System.out.println("ï¿½ß³Ì³ï¿½ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½Ä¿:  " + executor.getPoolSize() + ", ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÈ´ï¿½Ö´ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿:  " + executor.getQueue().size() 
+                    + "ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿: " + executor.getCompletedTaskCount());
         }
         executor.shutdown();
     }
