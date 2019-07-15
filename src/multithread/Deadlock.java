@@ -90,7 +90,7 @@ class ThreadB implements Runnable {
                 e.printStackTrace();
             }
             synchronized (arr1) {
-                System.out.println(name + "��ȡarr1");
+                System.out.println(name + "arr1");
             }
         }
         
