@@ -8,6 +8,8 @@ public class BitMapTest {
         long currentTime = System.currentTimeMillis(); 
         int [] result = bitMapTest.getExitsNumArr(arr);
         bitMapTest.printNumber(result);
+        System.out.println();
+        System.gc();
         System.out.println("used time: " + (System.currentTimeMillis() - currentTime));
     }
     
@@ -42,7 +44,7 @@ public class BitMapTest {
     private void printNumber(int [] bitArr) {
         for (int i = 0; i < bitArr.length; i++) {
             for (int j = 30; j >= 0; j -= 2) {
-                int filter = 2 << j;
+                int filter = 3 << j;
                 int currentValue = (bitArr[i] & filter);
                 if (currentValue != 0) {
                     System.out.println("appear more than once: " + getOriginValue(i, j));

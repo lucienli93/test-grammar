@@ -1,4 +1,4 @@
-package test;
+package test.progarm;
 
 public class Find1CountFrom1ToN {
 
