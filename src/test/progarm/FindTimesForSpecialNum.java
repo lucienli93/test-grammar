@@ -5,7 +5,7 @@ public class FindTimesForSpecialNum {
     public static void main(String[] args) {
         FindTimesForSpecialNum test = new FindTimesForSpecialNum();
         int [] arr = new int [] {1, 1, 2, 3, 3, 3, 4, 4};
-        System.out.println(test.getTimesForSpecialNum(arr, 4));
+        System.out.println(test.getTimesForSpecialNum(arr, 0));
     }
 
     public int getTimesForSpecialNum(int [] arr, int number) {
@@ -44,7 +44,7 @@ public class FindTimesForSpecialNum {
         }
         int mid = (start + end) / 2;
         if (arr[mid] != number) {
-            return getStartIndex(arr, number, mid, end);
+            return getStartIndex(arr, number, mid + 1, end);
         }
         if ((mid > 0 && arr[mid - 1] != number) || 
                 mid == 0) {
@@ -56,17 +56,17 @@ public class FindTimesForSpecialNum {
 
     private int getEndIndex(int [] arr, int number, int start, int end) {
         if (start >= end) {
-            return arr[start];
+            return end;
         }
         int mid = (start + end) / 2;
         if (arr[mid] != number) {
-            return getEndIndex(arr, number, start, mid + 1);
+            return getEndIndex(arr, number, start, mid - 1);
         }
         if ((mid < arr.length - 1 && arr[mid + 1] != number) ||
                 mid == arr.length - 1) {
             return mid;
         } else {
-            return getEndIndex(arr, number, mid, end + 1);
+            return getEndIndex(arr, number, mid + 1, end);
         }
     }
 }
