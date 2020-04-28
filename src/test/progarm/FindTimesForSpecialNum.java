@@ -4,8 +4,8 @@ public class FindTimesForSpecialNum {
 
     public static void main(String[] args) {
         FindTimesForSpecialNum test = new FindTimesForSpecialNum();
-        int [] arr = new int [] {1, 1, 2, 3, 3, 3, 4, 4};
-        System.out.println(test.getTimesForSpecialNum(arr, 0));
+        int [] arr = new int [] {4, 4};
+        System.out.println(test.getTimesForSpecialNum(arr, 4));
     }
 
     public int getTimesForSpecialNum(int [] arr, int number) {
@@ -40,7 +40,7 @@ public class FindTimesForSpecialNum {
 
     private int getStartIndex(int [] arr, int number, int start, int end) {
         if (start >= end) {
-            return (arr[end] == number ? end : end + 1);
+            return start;
         }
         int mid = (start + end) / 2;
         if (arr[mid] != number) {
@@ -56,7 +56,7 @@ public class FindTimesForSpecialNum {
 
     private int getEndIndex(int [] arr, int number, int start, int end) {
         if (start >= end) {
-            return end;
+            return start;
         }
         int mid = (start + end) / 2;
         if (arr[mid] != number) {

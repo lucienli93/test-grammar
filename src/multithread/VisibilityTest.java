@@ -6,7 +6,7 @@ public class VisibilityTest {
     private static boolean ready;
     private static int number;
     static CountDownLatch CountDownLatch = new CountDownLatch(2);
- 
+
     private static class ReaderThread extends Thread {
         public void run() {
             try {
@@ -21,11 +21,11 @@ public class VisibilityTest {
             CountDownLatch.countDown();
         }
     }
- 
+
     private static class WriterThread extends Thread {
         public void run() {
             try {
-                Thread.sleep(11);
+                Thread.sleep(10);
                 CountDownLatch.countDown();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -34,7 +34,7 @@ public class VisibilityTest {
             ready = true;
         }
     }
- 
+
     public static void main(String[] args) {
         new WriterThread().start();
         new ReaderThread().start();
